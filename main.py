@@ -19,12 +19,23 @@ __version__ = "0.0.1"
 __autor__ = "João Paulo"
 __licence__ = "Unlicense"
 
-from stats import get_count_of_words_text,get_book_text,get_number_of_times_each_character
+from stats import get_count_of_words_text,get_book_text,get_number_of_times_each_character,get_return_order_dic
 
 def main():
     book = get_book_text("./books/frankenstein.txt")
     num_words = get_count_of_words_text(book)
-    print(f"{num_words} words found in the document")
     dic_count_words = get_number_of_times_each_character(book)
-    print(dic_count_words)
+    
+    print("=" *12,"BOOKBOT","=" *12)
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("-" *12,"Word Count","-" *12)
+    print(f"Found {num_words} total words")
+    print("-" *10,"Character Count","-" *10)
+    list_character = get_return_order_dic(dic_count_words)
+    for dic_character in list_character:
+        if (dic_character["char"].isalpha()):
+            char = dic_character["char"]
+            num = dic_character["num"]
+            print(f"{char}: {num}")
+    print("=" *10,"END ","=" *10)
 main()

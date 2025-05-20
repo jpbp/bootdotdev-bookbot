@@ -18,4 +18,21 @@ def get_number_of_times_each_character(book):
         else:
             characters[char] += 1
     return characters
+
+def sort_on(dict):
+    return dict["num"]
+
+def get_return_order_dic(dic_characters):
+    list_dic_characters = []
+    for key,value in dic_characters.items():
+        new_dict = {}
+        new_dict["char"] = key
+        new_dict["num"] = value
+        list_dic_characters.append(new_dict)
+    
+    list_dic_characters.sort(reverse=True, key=sort_on)
+    #print(list_dic_characters)
+    return list_dic_characters
+    
+    
     
