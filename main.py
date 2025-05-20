@@ -19,16 +19,8 @@ __version__ = "0.0.1"
 __autor__ = "João Paulo"
 __licence__ = "Unlicense"
 
-def get_book_text(path_to_file):
-    file_contents = ""
-    with open(path_to_file) as f:
-        file_contents += f.read()    
-    return file_contents
- 
-def get_count_of_words_text(book):
-    words = book.split()
-    count_words = len(words)
-    return count_words 
+from stats import get_count_of_words_text
+from stats import get_book_text
        
 def main():
     book = get_book_text("./books/frankenstein.txt")
