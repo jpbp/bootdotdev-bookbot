@@ -21,10 +21,12 @@ __licence__ = "Unlicense"
 
 from stats import get_count_of_words_text
 from stats import get_book_text
-       
+from stats import get_number_of_times_each_character
+
 def main():
     book = get_book_text("./books/frankenstein.txt")
     num_words = get_count_of_words_text(book)
     print(f"{num_words} words found in the document")
-    
+    dic_count_words = get_number_of_times_each_character(book)
+    print(dic_count_words)
 main()
