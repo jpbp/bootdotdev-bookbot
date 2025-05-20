@@ -19,9 +19,7 @@ __version__ = "0.0.1"
 __autor__ = "João Paulo"
 __licence__ = "Unlicense"
 
-from stats import get_count_of_words_text
-from stats import get_book_text
-from stats import get_number_of_times_each_character
+from stats import get_count_of_words_text,get_book_text,get_number_of_times_each_character
 
 def main():
     book = get_book_text("./books/frankenstein.txt")
