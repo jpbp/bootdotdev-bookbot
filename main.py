@@ -19,10 +19,21 @@ __version__ = "0.0.1"
 __autor__ = "João Paulo"
 __licence__ = "Unlicense"
 
-from stats import get_count_of_words_text,get_book_text,get_number_of_times_each_character,get_return_order_dic
+from stats import (
+    get_count_of_words_text,
+    get_book_text,
+    get_number_of_times_each_character,
+    get_return_order_dic)
+
+import sys
 
 def main():
-    book = get_book_text("./books/frankenstein.txt")
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+        
+    name_book = f"./{sys.argv[1]}"
+    book = get_book_text(name_book)
     num_words = get_count_of_words_text(book)
     dic_count_words = get_number_of_times_each_character(book)
     
